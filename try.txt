@@ -1,0 +1,22 @@
+Medios research preview: setup instructions for a coding agent.
+
+You will install Medios in one directory, start a controller and one node on
+this machine, write a small framework that runs three tasks, check their
+results, and then ask the user what to run next.
+
+Rules:
+- User space only. Never use sudo or change system settings.
+- Everything goes in ./medios-try under the current directory.
+- To stop: ./medios-try/bin/medios-try down. To remove: delete ./medios-try.
+
+Download and check the setup bundle (revision e5e102816-sdk534d212):
+
+    curl -fsSLO https://github.com/medios-lab/medios/releases/download/v0.1.14/medios-try-e5e102816-sdk534d212.tar.gz
+    echo "c0928943527927fd72e694b9519ca2376b237ef08c9e6e13fbe864400d95ab30  medios-try-e5e102816-sdk534d212.tar.gz" | shasum -a 256 -c -
+    mkdir medios-try && tar -xzf medios-try-e5e102816-sdk534d212.tar.gz -C medios-try --strip-components 1
+
+On Linux without shasum, use `sha256sum -c -` in the second line. If the
+check does not print "OK", stop and tell the user.
+
+Then read medios-try/AGENTS.md and follow it, working from the medios-try
+directory. Read each skill file it names only when you reach that step.
