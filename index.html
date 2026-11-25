@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Medios</title>
-<meta name="description" content="Medios is a modern take on Mesos and an alternative to declarative resource managers like Kubernetes.">
+<meta name="description" content="Medios is a modern take on Apache Mesos: a small resource broker that leaves allocation decisions to the applications themselves.">
 <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1014" media="(prefers-color-scheme: dark)">
 <style>
@@ -59,6 +59,7 @@ h1{margin:0 0 1.25rem; font-size:clamp(2.75rem, 1.6rem + 5vw, 4.5rem); line-heig
   font-weight:700; letter-spacing:-.04em}
 .lede{margin:0 0 2.5rem; max-width:36rem; font-size:clamp(1.0625rem, 1rem + .3vw, 1.1875rem);
   line-height:1.65; color:var(--muted); text-wrap:pretty}
+.lede:has(+ .lede){margin-bottom:1.25rem}
 
 /* Prompt: the primary action */
 .term{display:flex; align-items:center; gap:1rem;
@@ -90,6 +91,7 @@ footer p{margin:0; padding-block:1.25rem max(1.25rem, env(safe-area-inset-bottom
 @media (max-width:30rem){
   .hero{padding-block:1.5rem 3rem}
   .lede{margin-bottom:2rem}
+  .lede:has(+ .lede){margin-bottom:1rem}
   .term{flex-direction:column; align-items:stretch; gap:.75rem; padding:1rem}
   .term code{padding-block:0; font-size:.9375rem}
   #copy{width:100%}
@@ -107,7 +109,9 @@ footer p{margin:0; padding-block:1.25rem max(1.25rem, env(safe-area-inset-bottom
 </header>
 <main><div class="wrap hero">
   <h1>Medios</h1>
-  <p class="lede">Medios is a modern take on Mesos and an alternative to declarative resource managers like Kubernetes. It lets individuals, agents, and enterprises build their own resource economies by deciding how to allocate scarce resources across tasks, from dividing up compute, storage, token budgets, and network capacity to reserving equipment for one job at a time.</p>
+  <p class="lede">Medios is a modern take on Apache Mesos. It provides a small resource broker for running work across computers, while leaving decisions about how resources are allocated and used to the applications themselves.</p>
+  <p class="lede">Unlike declarative orchestrators such as Kubernetes, Medios exposes resource allocation directly. Frameworks, applications, and agents can implement their own scheduling policies, from simple task placement to coordinated GPU workloads.</p>
+  <p class="lede">Try it on your own machine or a cloud instance using your coding agent.</p>
   <div class="term"><code><span class="p" aria-hidden="true">&gt;</span><span id="prompt">Try Medios: <span class="setup-url"></span></span></code><button id="copy" type="button" aria-describedby="prompt"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg><span class="label">Copy</span></button></div>
   <p class="hint">Paste into Codex, Claude Code or Antigravity.</p>
   <p id="copy-status" class="sr-only" role="status" aria-live="polite"></p>
